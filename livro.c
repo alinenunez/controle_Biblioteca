@@ -45,7 +45,7 @@ void insereListaLivros(SentLivros *sentL){
 
 }
 
-void buscaLivro (SentLivros *sentL){
+void buscaLivroID (SentLivros *sentL){
     int id;
     Livros *aux;
 
