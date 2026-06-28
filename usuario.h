@@ -1,11 +1,13 @@
-typedef struct {
+typedef struct Usuarios {
     char nome[100];
     char email[100];
+    struct Usuarios *next;
+    struct Usuarios *prev;
 } Usuarios;
 
-struct NoUsuario {
-    Usuarios base;
-    struct NoUsuario *next;
-    struct NoUsuario *prev;
-};
-typedef struct NoUsuario noUsuario;
+typedef struct SentUsuario {
+    Usuarios *first;
+    Usuarios *last;
+}SentUsuario;
+
+void insereUsuario(SentUsuario *sentU);
