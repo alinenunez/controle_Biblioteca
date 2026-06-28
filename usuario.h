@@ -11,3 +11,8 @@ typedef struct SentUsuario {
 }SentUsuario;
 
 void insereUsuario(SentUsuario *sentU);
+
+void buscaEmail(SentUsuario *sentU);
+void buscaNome(SentUsuario *sentU);
+void buscaEmprestimosPorEmail(SentLivros *sentL, SentUsuario *sentU);
+
