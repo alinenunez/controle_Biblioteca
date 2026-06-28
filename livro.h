@@ -9,9 +9,12 @@ typedef struct Livros {
     struct Livros* prev;
 } Livros;
 
-typedef struct sentLivros{
+typedef struct SentLivros{
     Livros *first;
     Livros *last;
-} sentLivros;
+} SentLivros;
 
-void insereListaLivros(sentLivros *sentL);
+void insereListaLivros(SentLivros *sentL);
+void buscaLivro (SentLivros *sentL);
+void buscaAutor (SentLivros *sentL);
+
