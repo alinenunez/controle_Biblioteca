@@ -3,16 +3,16 @@
 #include <string.h>
 #include "livro.h"
 
-void insereListaLivros(sentLivros *sentL) {
+void insereListaLivros(sentLivros *sentL){
     Livros *new = malloc(sizeof(Livros));
 
-    if (new == NULL) {
+    if(new == NULL){
         printf("Erro: memoria insuficiente.\n");
         return;
     }
-    if (sentL->last == NULL) {
+    if(sentL->last == NULL){
         new->id = 1; //primeiro livro
-    } else {
+    }else{
         new->id = sentL->last->id + 1;
     }
 
@@ -31,10 +31,10 @@ void insereListaLivros(sentLivros *sentL) {
     new->prev = NULL;
     new->next = NULL;
 
-    if (sentL->first == NULL) { //lista vazia
+    if(sentL->first == NULL){ //lista vazia
         sentL->first = new;
         sentL->last  = new;
-    } else {
+    }else{
         //insere no final
         new->prev = sentL->last; 
         sentL->last->next = new;        
