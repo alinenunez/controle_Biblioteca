@@ -17,4 +17,5 @@ typedef struct SentLivros{
 void insereListaLivros(SentLivros *sentL);
 void buscaLivroID (SentLivros *sentL);
 void buscaAutor (SentLivros *sentL);
+void atualizaLivro(SentLivros *sentL);
 

@@ -94,3 +94,52 @@ void buscaAutor (SentLivros *sentL){
     if(!encontrou)
         printf("Livro nao encontrado. \n");
 }
+
+void atualizaLivro(SentLivros *sentL) {
+    int id;
+    Livros *aux;
+
+    printf("Codigo do livro a atualizar: ");
+    scanf("%d", &id);
+
+    for (aux = sentL->first; aux != NULL; aux = aux->next) {
+        if (aux->id == id) {
+            int opcao;
+            do {
+                printf("\n--- O que deseja alterar? ---\n");
+                printf("1. Titulo\n");
+                printf("2. Autor\n");
+                printf("3. Ano\n");
+                printf("0. Voltar\n");
+                printf("Opcao: ");
+                scanf("%d", &opcao);
+
+                switch (opcao) {
+                    case 1:
+                        printf("Novo titulo: ");
+                        scanf("%99s", aux->titulo);
+                        printf("Titulo atualizado com sucesso!\n");
+                        break;
+                    case 2:
+                        printf("Novo autor: ");
+                        scanf("%99s", aux->autor);
+                        printf("Autor atualizado com sucesso!\n");
+                        break;
+                    case 3:
+                        printf("Novo ano: ");
+                        scanf("%d", &aux->anoP);
+                        printf("Ano atualizado com sucesso!\n");
+                        break;
+                    case 0:
+                        printf("Voltando...\n");
+                        break;
+                    default:
+                        printf("Opcao invalida!\n");
+                }
+            } while (opcao != 0);
+            return;
+        }
+    }
+    printf("Livro nao encontrado.\n");
+}
+
