@@ -15,4 +15,5 @@ void insereUsuario(SentUsuario *sentU);
 void buscaEmail(SentUsuario *sentU);
 void buscaNome(SentUsuario *sentU);
 void buscaEmprestimosPorEmail(SentLivros *sentL, SentUsuario *sentU);
+void atualizaUsuario(SentUsuario *sentU);
 

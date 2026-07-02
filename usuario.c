@@ -138,7 +138,25 @@ void buscaEmprestimosPorEmail(SentLivros *sentL, SentUsuario *sentU) {
         }
     }
 
-    if (!encontrou)
+    if (!encontrou){
         printf("Usuario nao possui livros emprestados.\n");
-        
+    }
+}
+
+void atualizaUsuario(SentUsuario *sentU) {
+    char email[100];
+    Usuarios *aux;
+    
+    printf("Email do usuario a atualizar: ");
+    scanf("%99s", email);
+
+    for (aux = sentU->first; aux != NULL; aux = aux->next) {
+        if (strcmp(aux->email, email) == 0) {
+            printf("Novo nome: ");
+            scanf("%99s", aux->nome);
+            printf("Nome atualizado com sucesso!\n");
+            return;
+        }
+    }
+    printf("Usuario nao cadastrado.\n");
 }
